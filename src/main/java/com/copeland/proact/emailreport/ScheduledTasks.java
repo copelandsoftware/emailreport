@@ -21,11 +21,6 @@ import java.util.Properties;
 @Slf4j
 public class ScheduledTasks {
 
-    //private static final String CSV_FILE = "/path/to/yourfile.csv";
-
-    //private static final String CSV_FILE = "D:\\Dollar General HVAC Daily Report.csv";
-
-
     @Value("${report.hvac.csv.template:D:\\\\Dollar General HVAC Daily Report.csv}")
     private String CSV_FILE;
 
