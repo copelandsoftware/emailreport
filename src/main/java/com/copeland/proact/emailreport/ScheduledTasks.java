@@ -37,7 +37,7 @@ public class ScheduledTasks {
 
     //@Scheduled(cron = "0 0 7 * * ?")
     @Scheduled(initialDelay = 1000, fixedDelayString = "30000000")
-    public void performTask() {
+    public void performDGHVACTask() {
         log.info("Start to export HVAC report......");
         try (Connection conn = databaseComponent.getConnection()) {
             // connect oracle
@@ -128,6 +128,12 @@ public class ScheduledTasks {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Scheduled(cron = "0 0 2 ? * MON")
+    public void performMeijerScoreCardTask() {
+        //TODO
+
     }
 
     private void sendEmailWithAttachment(String to, String subject, String body, String filename) throws MessagingException {
